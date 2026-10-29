@@ -5,8 +5,8 @@ Claude Code loads every `.claude/skills/<name>/SKILL.md` in this repository as a
 
 Only the skill folders listed below are included. No plugins, hooks, scripts on the
 execution path, permission settings or application code come with them. Files are copied
-unmodified from the pinned upstream commits; the only additions are the license files and
-this README.
+from the pinned upstream commits; the only additions are the license files and this README,
+and the only edits are the two `systematic-debugging` changes listed under that skill below.
 
 | Skill | Source repository | Pinned commit | Upstream path | License |
 |---|---|---|---|---|
@@ -38,8 +38,19 @@ Excluded from upstream, as agreed during review:
 
 - `test-academic.md`, `test-pressure-1.md`, `test-pressure-2.md`, `test-pressure-3.md`:
   the author's internal test scenarios for the skill.
-- `find-polluter.sh`: a shell script. `root-cause-tracing.md` still mentions it, unmodified
-  from upstream; that reference points to a file that is intentionally not vendored here.
+- `find-polluter.sh`: a shell script. It also assumed `npm test <file>`, which does not fit
+  this repository's Gradle and `node --test` test commands.
+
+Local modifications (the only files that differ from the pinned upstream commit):
+
+- `root-cause-tracing.md`, section "Finding Which Test Causes Pollution": the instructions
+  to run `find-polluter.sh` are replaced with a manual one-test-at-a-time bisection procedure
+  using this repository's Gradle and `node --test` commands.
+- `SKILL.md`, Phase 4 steps 1 and 3: references to the `superpowers:test-driven-development`
+  and `superpowers:verification-before-completion` skills, which are not installed here, are
+  replaced with equivalent self-contained instructions.
+
+All other files in the three skill folders are unmodified upstream copies.
 
 ## Licenses
 

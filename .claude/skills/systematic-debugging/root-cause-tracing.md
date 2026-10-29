@@ -98,13 +98,15 @@ npm test 2>&1 | grep 'DEBUG git init'
 
 If something appears during tests but you don't know which test:
 
-Use the bisection script `find-polluter.sh` in this directory:
+Bisect manually, one test at a time (the upstream `find-polluter.sh` script is intentionally not included in this repository):
 
-```bash
-bash ./find-polluter.sh '.git' 'src/**/*.test.ts'
-```
-
-Runs tests one-by-one, stops at first polluter. See script for usage.
+1. Run the full suite once and confirm the pollution appears, then remove it.
+2. Run one test class or file at a time from the repository root, checking for the pollution after each run:
+   - Kotlin core: `./gradlew :core:test --tests 'app.brainrot.core.scoring.SharedFixturesTest'`
+   - Android unit tests: `./gradlew :android:testDebugUnitTest --tests 'app.brainrot.spike.RoomPersistenceTest'`
+   - TypeScript scoring: `cd web/scoring && node --test test/fixtures.test.ts`
+3. The first single run that reproduces the pollution identifies the polluter. Inspect that test's setup and teardown.
+4. If no single test reproduces it, the cause is an interaction between tests: run half of the tests together, keep the half that reproduces it, and repeat until one pair or one test remains.
 
 ## Real Example: Empty projectDir
 
