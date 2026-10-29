@@ -1,0 +1,62 @@
+{
+  "id": "16-duration-partial",
+  "description": "25 + 20 minutes against a 60-minute target = 75%.",
+  "habits": [
+    {
+      "id": "deepwork",
+      "measurement": "DURATION",
+      "target": 60,
+      "unit": "min",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e34",
+      "habitId": "deepwork",
+      "type": "DURATION",
+      "value": 25,
+      "eventTime": "2026-10-28T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e35",
+      "habitId": "deepwork",
+      "type": "DURATION",
+      "value": 20,
+      "eventTime": "2026-10-28T10:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T10:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-28",
+  "expected": {
+    "habits": {
+      "deepwork": {
+        "status": "PARTIAL",
+        "recorded": 45,
+        "progress": 0.75,
+        "streak": 0,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 1,
+      "ratio": 0.0
+    },
+    "dailyScore": 75,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 3
+  }
+}

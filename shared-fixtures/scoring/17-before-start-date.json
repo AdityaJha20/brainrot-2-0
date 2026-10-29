@@ -1,0 +1,39 @@
+{
+  "id": "17-before-start-date",
+  "description": "The habit starts on 28 Oct, so 27 Oct is not scheduled and has no score.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-28",
+      "endDate": null
+    }
+  ],
+  "events": [],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-27",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "NOT_SCHEDULED",
+        "streak": 0,
+        "streakPendingReview": false
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 0,
+      "ratio": null
+    },
+    "dailyScore": null,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 0
+  }
+}

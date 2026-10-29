@@ -1,0 +1,62 @@
+{
+  "id": "04-negative-total-clamped",
+  "description": "+1 L then a -2 L correction. The total is never shown below zero.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e7",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 1,
+      "eventTime": "2026-10-28T03:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T03:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e8",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": -2,
+      "eventTime": "2026-10-28T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T04:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-28",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "PARTIAL",
+        "recorded": 0,
+        "progress": 0,
+        "streak": 0,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 1,
+      "ratio": 0.0
+    },
+    "dailyScore": 0,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 1
+  }
+}

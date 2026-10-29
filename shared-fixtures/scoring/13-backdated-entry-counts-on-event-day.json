@@ -1,0 +1,52 @@
+{
+  "id": "13-backdated-entry-counts-on-event-day",
+  "description": "Entry typed on 28 Oct but describing 27 Oct. It belongs to 27 Oct (event time), not 28 Oct (creation time).",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e30",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 3,
+      "eventTime": "2026-10-27T05:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T10:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-27",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "COMPLETED",
+        "recorded": 3,
+        "progress": 1,
+        "streak": 1,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 1,
+      "eligible": 1,
+      "ratio": 1.0
+    },
+    "dailyScore": 100,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 4
+  }
+}

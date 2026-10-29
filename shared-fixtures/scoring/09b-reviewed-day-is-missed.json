@@ -1,0 +1,43 @@
+{
+  "id": "09b-reviewed-day-is-missed",
+  "description": "Same day after the user reviewed it: now it is a confirmed MISSED day.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [],
+  "dayMarks": [],
+  "reviewedDates": [
+    "2026-10-27"
+  ],
+  "evaluateDate": "2026-10-27",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "MISSED",
+        "recorded": 0,
+        "progress": 0,
+        "streak": 0,
+        "streakPendingReview": false
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 1,
+      "ratio": 0.0
+    },
+    "dailyScore": 0,
+    "scoreIsProvisional": false,
+    "heatmapLevel": 0
+  }
+}

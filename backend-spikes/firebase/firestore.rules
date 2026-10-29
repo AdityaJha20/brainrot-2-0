@@ -1,0 +1,84 @@
+rules_version = '2';
+
+// Brain Rot 2.0 — Phase 0 proposed Firestore rules. Tested only in the local emulator (demo-brainrot).
+// Layout: /users/{uid} (profile), /users/{uid}/habits/{habitId}, /users/{uid}/events/{eventId}
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function profilePath(uid) {
+      return /databases/$(database)/documents/users/$(uid);
+    }
+
+    // "Sign out my other devices" at ₹0 (no Admin SDK / Cloud Functions): the user re-signs in on a trusted
+    // device and stores revokedBefore = that sign-in time. Tokens from earlier sign-ins are refused here.
+    // NOTE: this costs one extra document read per request (the get()).
+    function notRevoked(uid) {
+      return !exists(profilePath(uid))
+        || !('revokedBefore' in get(profilePath(uid)).data)
+        || request.auth.token.auth_time >= get(profilePath(uid)).data.revokedBefore;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid && notRevoked(uid);
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && (!('revokedBefore' in request.resource.data)
+            || request.resource.data.revokedBefore <= request.auth.token.auth_time);
+      // revokedBefore can only move forward, and never past the caller's own sign-in time.
+      allow update: if isOwner(uid)
+        && request.resource.data.get('revokedBefore', 0) >= resource.data.get('revokedBefore', 0)
+        && request.resource.data.get('revokedBefore', 0) <= request.auth.token.auth_time;
+      allow delete: if false;
+    }
+
+    // Editable settings: optimistic concurrency. Every write must be exactly one version newer than the
+    // stored document, so an offline edit made against an old version is REJECTED (a visible conflict)
+    // instead of silently overwriting a newer target (handoff: "never silently merge different targets").
+    match /users/{uid}/habits/{habitId} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid) && request.resource.data.version == 1
+        && request.resource.data.id == habitId;
+      allow update: if isOwner(uid) && request.resource.data.version == resource.data.version + 1
+        && request.resource.data.id == resource.data.id;
+      allow delete: if false; // archive instead (status field)
+    }
+
+    // Activity events: append-only. The only permitted change is marking one deleted (a tombstone),
+    // so deletions sync to every device and totals can always be recalculated.
+    function validEvent(d, eventId) {
+      return d.keys().hasAll(['id', 'habitId', 'type', 'value', 'eventTimeUtcMs', 'zone',
+                              'createdAtUtcMs', 'clientMutationId', 'deleted'])
+        && d.id == eventId
+        && d.type in ['QUANTITY', 'DURATION', 'COMPLETION']
+        && d.value is number
+        && d.eventTimeUtcMs is int
+        && d.createdAtUtcMs is int
+        && d.zone is string && d.zone.size() > 0 && d.zone.size() <= 64
+        && d.habitId is string
+        && d.deleted == false;
+    }
+
+    match /users/{uid}/events/{eventId} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid) && validEvent(request.resource.data, eventId);
+      allow update: if isOwner(uid)
+        && resource.data.deleted == false
+        && request.resource.data.deleted == true
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['deleted', 'deletedAtUtcMs', 'updatedAtUtcMs']);
+      allow delete: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

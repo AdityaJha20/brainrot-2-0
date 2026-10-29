@@ -1,0 +1,115 @@
+{
+  "id": "10-streak-ignores-unscheduled-weekend",
+  "description": "Weekday habit completed Mon-Fri and the next Monday. The weekend is not scheduled, so the streak is 6.",
+  "habits": [
+    {
+      "id": "focus",
+      "measurement": "BINARY",
+      "target": 1,
+      "unit": null,
+      "importance": 1,
+      "schedule": {
+        "type": "DAYS_OF_WEEK",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "startDate": "2026-10-19",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e14",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-19T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-19T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e15",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-20T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-20T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e16",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-21T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-21T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e17",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-22T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-22T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e18",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-23T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-23T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e19",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-26T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-26T04:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-26"
+  ],
+  "evaluateDate": "2026-10-26",
+  "expected": {
+    "habits": {
+      "focus": {
+        "status": "COMPLETED",
+        "progress": 1,
+        "streak": 6,
+        "streakPendingReview": false
+      }
+    },
+    "dailyCompletion": {
+      "completed": 1,
+      "eligible": 1,
+      "ratio": 1.0
+    },
+    "dailyScore": 100,
+    "scoreIsProvisional": false,
+    "heatmapLevel": 4
+  }
+}

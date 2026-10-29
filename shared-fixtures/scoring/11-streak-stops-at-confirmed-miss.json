@@ -1,0 +1,104 @@
+{
+  "id": "11-streak-stops-at-confirmed-miss",
+  "description": "Wednesday was reviewed with no completion (a real miss), so the streak counts only Thu, Fri, Mon = 3.",
+  "habits": [
+    {
+      "id": "focus",
+      "measurement": "BINARY",
+      "target": 1,
+      "unit": null,
+      "importance": 1,
+      "schedule": {
+        "type": "DAYS_OF_WEEK",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "startDate": "2026-10-19",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e20",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-19T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-19T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e21",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-20T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-20T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e22",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-22T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-22T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e23",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-23T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-23T04:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e24",
+      "habitId": "focus",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-26T04:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-26T04:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23"
+  ],
+  "evaluateDate": "2026-10-26",
+  "expected": {
+    "habits": {
+      "focus": {
+        "status": "COMPLETED",
+        "progress": 1,
+        "streak": 3,
+        "streakPendingReview": false
+      }
+    },
+    "dailyCompletion": {
+      "completed": 1,
+      "eligible": 1,
+      "ratio": 1.0
+    },
+    "dailyScore": 100,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 4
+  }
+}

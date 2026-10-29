@@ -1,0 +1,15 @@
+<resources>
+    <style name="Theme.BrainRot" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/near_black</item>
+        <item name="android:statusBarColor">@color/near_black</item>
+        <item name="android:navigationBarColor">@color/near_black</item>
+    </style>
+
+    <!-- Dialog over the home screen for the "open quick-entry screen" fallback. -->
+    <style name="Theme.BrainRot.QuickEntry" parent="android:Theme.Material.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+</resources>

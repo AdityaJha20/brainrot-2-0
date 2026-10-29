@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Brain Rot P0</string>
+    <string name="widget_label">Brain Rot graph (Phase 0)</string>
+    <string name="widget_description">Habit contribution graph with quick entry. Phase 0 test widget.</string>
+</resources>

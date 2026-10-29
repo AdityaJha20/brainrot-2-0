@@ -1,0 +1,41 @@
+{
+  "id": "09a-unreviewed-day-is-unknown",
+  "description": "No logs and the day has not been reviewed: status is UNKNOWN, not MISSED.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-27",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "UNKNOWN",
+        "recorded": 0,
+        "progress": 0,
+        "streak": 0,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 1,
+      "ratio": 0.0
+    },
+    "dailyScore": 0,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 0
+  }
+}

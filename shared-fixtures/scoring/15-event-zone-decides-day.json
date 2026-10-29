@@ -1,0 +1,52 @@
+{
+  "id": "15-event-zone-decides-day",
+  "description": "20:00 UTC on 27 Oct, logged while in London: that is 27 Oct locally (it would be 28 Oct in India).",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e33",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 3,
+      "eventTime": "2026-10-27T20:00:00Z",
+      "zone": "Europe/London",
+      "createdAt": "2026-10-27T20:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-27",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "COMPLETED",
+        "recorded": 3,
+        "progress": 1,
+        "streak": 1,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 1,
+      "eligible": 1,
+      "ratio": 1.0
+    },
+    "dailyScore": 100,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 4
+  }
+}

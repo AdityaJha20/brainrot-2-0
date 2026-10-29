@@ -1,0 +1,32 @@
+# Build outputs
+build/
+.gradle/
+.kotlin/
+out/
+*.apk
+*.aab
+node_modules/
+dist/
+.next/
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+local.properties
+captures/
+
+# Secrets and per-developer config: never commit these
+google-services.json
+GoogleService-Info.plist
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+!.env.example
+supabase/.temp/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

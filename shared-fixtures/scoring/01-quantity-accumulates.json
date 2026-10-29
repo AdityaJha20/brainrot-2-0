@@ -1,0 +1,72 @@
+{
+  "id": "01-quantity-accumulates",
+  "description": "1 L + 1 L + 1 L = 3 L reaches the 3 L target. Earlier day has no logs, so the streak stops there as 'pending review', not as a failure.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 1,
+      "eventTime": "2026-10-28T03:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T03:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e2",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 1,
+      "eventTime": "2026-10-28T07:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T07:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e3",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 1,
+      "eventTime": "2026-10-28T12:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T12:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-28",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "COMPLETED",
+        "recorded": 3,
+        "progress": 1,
+        "streak": 1,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 1,
+      "eligible": 1,
+      "ratio": 1.0
+    },
+    "dailyScore": 100,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 4
+  }
+}

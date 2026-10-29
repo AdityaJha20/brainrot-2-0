@@ -1,0 +1,62 @@
+{
+  "id": "05-one-tap-complete-does-not-fabricate-quantity",
+  "description": "User logged 0.5 L then tapped 'complete'. Progress is 100% but the recorded amount stays 0.5 L.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e9",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 0.5,
+      "eventTime": "2026-10-28T03:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T03:00:00Z",
+      "deleted": false
+    },
+    {
+      "id": "e10",
+      "habitId": "water",
+      "type": "COMPLETION",
+      "value": 1,
+      "eventTime": "2026-10-28T15:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T15:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-28",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "COMPLETED",
+        "recorded": 0.5,
+        "progress": 1,
+        "streak": 1,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 1,
+      "eligible": 1,
+      "ratio": 1.0
+    },
+    "dailyScore": 100,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 4
+  }
+}

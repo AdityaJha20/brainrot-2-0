@@ -1,0 +1,52 @@
+{
+  "id": "02-quantity-partial",
+  "description": "1.5 L of 3 L = 50% progress. Today is unfinished, so it neither counts for nor breaks the streak.",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    }
+  ],
+  "events": [
+    {
+      "id": "e4",
+      "habitId": "water",
+      "type": "QUANTITY",
+      "value": 1.5,
+      "eventTime": "2026-10-28T03:00:00Z",
+      "zone": "Asia/Kolkata",
+      "createdAt": "2026-10-28T03:00:00Z",
+      "deleted": false
+    }
+  ],
+  "dayMarks": [],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-28",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "PARTIAL",
+        "recorded": 1.5,
+        "progress": 0.5,
+        "streak": 0,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 1,
+      "ratio": 0.0
+    },
+    "dailyScore": 50,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 2
+  }
+}

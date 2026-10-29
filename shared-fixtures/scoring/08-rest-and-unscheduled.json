@@ -1,0 +1,71 @@
+{
+  "id": "08-rest-and-unscheduled",
+  "description": "Saturday: weekday-only habit is not scheduled, water has a rest mark. Nothing is eligible, so there is no score (not zero).",
+  "habits": [
+    {
+      "id": "water",
+      "measurement": "QUANTITY",
+      "target": 3,
+      "unit": "L",
+      "importance": 1,
+      "schedule": {
+        "type": "DAILY"
+      },
+      "startDate": "2026-10-01",
+      "endDate": null
+    },
+    {
+      "id": "focus",
+      "measurement": "BINARY",
+      "target": 1,
+      "unit": null,
+      "importance": 1,
+      "schedule": {
+        "type": "DAYS_OF_WEEK",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "startDate": "2026-10-19",
+      "endDate": null
+    }
+  ],
+  "events": [],
+  "dayMarks": [
+    {
+      "habitId": "water",
+      "date": "2026-10-24",
+      "mark": "REST"
+    }
+  ],
+  "reviewedDates": [],
+  "evaluateDate": "2026-10-24",
+  "expected": {
+    "habits": {
+      "water": {
+        "status": "REST",
+        "recorded": 0,
+        "progress": 0,
+        "streak": 0,
+        "streakPendingReview": true
+      },
+      "focus": {
+        "status": "NOT_SCHEDULED",
+        "streak": 0,
+        "streakPendingReview": true
+      }
+    },
+    "dailyCompletion": {
+      "completed": 0,
+      "eligible": 0,
+      "ratio": null
+    },
+    "dailyScore": null,
+    "scoreIsProvisional": true,
+    "heatmapLevel": 0
+  }
+}

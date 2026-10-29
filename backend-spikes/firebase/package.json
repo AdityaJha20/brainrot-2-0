@@ -1,0 +1,15 @@
+{
+  "name": "@brainrot/firebase-spike",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Phase 0: Firestore Security Rules + offline/conflict behaviour, tested ONLY against the local emulator (demo- project, no Google account).",
+  "type": "module",
+  "scripts": {
+    "test": "firebase emulators:exec --only firestore --project demo-brainrot \"node --test test/rules.test.mjs\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "6.0.0",
+    "firebase": "13.1.0",
+    "firebase-tools": "15.34.2"
+  }
+}

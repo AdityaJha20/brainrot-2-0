@@ -1,0 +1,11 @@
+{
+  "name": "@brainrot/scoring",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Brain Rot 2.0 scoring engine (TypeScript twin of core/). Phase 0 proposal, not final.",
+  "type": "module",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}
